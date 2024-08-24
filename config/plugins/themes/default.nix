@@ -3,6 +3,10 @@
     catppuccin = {
       enable = true;
       settings = {
+      dim_inactive = {
+        enabled = false;
+        percentage = 0.25;
+      };
         background = {
           light = "macchiato";
           dark = "mocha";

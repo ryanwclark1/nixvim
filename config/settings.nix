@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   config = {
     extraConfigLuaPre =
@@ -10,33 +11,47 @@
       '';
 
     clipboard = {
-      providers.wl-copy.enable = true;
+      providers.wl-copy = {
+        enable = true;
+        package = pkgs.wl-clipboard;
+      };
     };
 
     opts = {
+
+      # Line numbers
       number = true;
       relativenumber = true;
-      clipboard = "unnamedplus";
+      hidden = true;
+      mouse = "a";
+      mousemodel = "extend";
+      splitbelow = true;
+      splitright = true;
+
+      # Tab Options
       tabstop = 2;
+      shiftwidth = 2;
       softtabstop = 2;
-      showtabline = 2;
       expandtab = true;
       smartindent = true;
-      shiftwidth = 2;
+
+      # Folding
+      foldmethod = "manual";
+      foldenable = false;
+
+
+      clipboard = "unnamedplus";
+      showtabline = 2;
       breakindent = true;
       cursorline = true;
       scrolloff = 8;
-      foldmethod = "manual";
-      foldenable = false;
       linebreak = true;
       spell = false;
       swapfile = false;
       timeoutlen = 300;
       termguicolors = true;
       showmode = false;
-      splitbelow = true;
       splitkeep = "screen";
-      splitright = true;
     };
   };
 }
