@@ -7,8 +7,7 @@ _: {
       "neo-tree"
     ];
     disabledFiletypes = {
-      # statusline = ["startup" "alpha"];
-      statusline = ["alpha"];
+      statusline = ["startup" "alpha"];
     };
     theme = "catppuccin";
     sections = {
