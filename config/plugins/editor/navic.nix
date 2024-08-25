@@ -3,7 +3,7 @@ _: {
     enable = true;
     click = false;
     depthLimit = 5;
-    depthlimitdepthLimitIndicator = "..";
+    depthLimitIndicator = "..";
     highlight = true;
     lazyUpdateContext = false;
     safeOutput = true;
