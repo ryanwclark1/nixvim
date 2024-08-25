@@ -1,9 +1,13 @@
 _: {
   plugins.navic = {
     enable = true;
-    separator = "  ";
-    highlight = true;
+    click = false;
     depthLimit = 5;
+    depthlimitdepthLimitIndicator = "..";
+    highlight = true;
+    lazyUpdateContext = false;
+    safeOutput = true;
+    separator = "  ";
     lsp = {
       autoAttach = true;
     };
