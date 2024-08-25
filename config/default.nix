@@ -29,7 +29,7 @@ _: {
     ./plugins/editor/undotree.nix
 
     # UI plugins
-    # ./plugins/ui/alpha.nix
+    ./plugins/ui/alpha.nix
     ./plugins/ui/bufferline.nix
     ./plugins/ui/lualine.nix
     ./plugins/ui/startup.nix
@@ -48,7 +48,6 @@ _: {
     ./plugins/utils/extra_plugins.nix
     ./plugins/utils/markdown-preview.nix
     ./plugins/utils/mini.nix
-    ./plugins/utils/obsidian.nix
     ./plugins/utils/telescope.nix
     ./plugins/utils/toggleterm.nix
     ./plugins/utils/whichkey.nix
