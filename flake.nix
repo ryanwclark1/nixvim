@@ -13,33 +13,37 @@
   };
 
   outputs = {
-    nixpkgs,
     nixvim,
     flake-parts,
     pre-commit-hooks,
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin"];
+      systems = [
+        "aarch64-linux"
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
 
       perSystem = {
-        system,
         pkgs,
-        self',
-        lib,
+        system,
         ...
       }: let
+        nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
-        nvim = nixvim'.makeNixvimWithModule {
+        nixvimModule = {
           inherit pkgs;
           module = ./config;
+          extraSpecialArgs = {
+              # inherit (inputs) foo;
+          };
         };
+        nvim = nixvim'.makeNixvimWithModule nixvimModule;
       in {
         checks = {
-          default = pkgs.nixvimLib.check.mkTestDerivationFromNvim {
-            inherit nvim;
-            name = "A nixvim configuration";
-          };
+          default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
@@ -51,7 +55,10 @@
 
         formatter = pkgs.alejandra;
 
-        packages.default = nvim;
+        packages = {
+          # Lets you run `nix run .` to start nixvim
+          default = nvim;
+        };
 
         devShells = {
           default = with pkgs;
