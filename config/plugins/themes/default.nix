@@ -7,10 +7,10 @@
           enabled = false;
           percentage = 0.25;
         };
-        background = {
-          light = "macchiato";
-          dark = "mocha";
-        };
+        # background = {
+        #   light = "macchiato";
+        #   dark = "mocha";
+        # };
         custom_highlights = ''
           function(highlights)
             return {
@@ -25,25 +25,21 @@
         no_underline = false;
         transparent_background = true;
         integrations = {
+          aerial = true;
           cmp = true;
-          notify = true;
           gitsigns = true;
-          neotree = true;
-          which_key = true;
           illuminate = {
             enabled = true;
             lsp = true;
           };
-          navic = {
-            enabled = true;
-            custom_bg = "NONE";
-          };
-          treesitter = true;
-          telescope.enabled = true;
           indent_blankline.enabled = true;
           mini = {
             enabled = true;
-            indentscope_color = "rosewater";
+            # indentscope_color = "rosewater";
+          };
+          navic = {
+            enabled = true;
+            custom_bg = "NONE";
           };
           native_lsp = {
             enabled = true;
@@ -64,6 +60,16 @@
               warnings = ["underline"];
             };
           };
+          neotree = true;
+          notify = true;
+          semantic_tokens = true;
+          symbols_outline = true;
+          telescope = {
+            enabled = true;
+            theme = "nvchad";
+          };
+          treesitter = true;
+          which_key = true;
         };
       };
     };
