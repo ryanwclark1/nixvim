@@ -5,12 +5,29 @@
       file-browser = {
         enable = true;
       };
+      frecency = {
+        enable = true;
+      };
       fzf-native = {
+        enable = true;
+      };
+      media-files = {
+        enable = true;
+      };
+      ui-select = {
         enable = true;
       };
     };
     settings = {
       defaults = {
+        file_ignore_patterns = [
+          "^.git/"
+          "^.mypy_cache/"
+          "^__pycache__/"
+          "^output/"
+          "^data/"
+          "%.ipynb"
+        ];
         layout_config = {
           horizontal = {
             prompt_position = "top";

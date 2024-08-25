@@ -29,6 +29,7 @@ _: {
     ./plugins/editor/undotree.nix
 
     # UI plugins
+    # ./plugins/ui/alpha.nix
     ./plugins/ui/bufferline.nix
     ./plugins/ui/lualine.nix
     ./plugins/ui/startup.nix
