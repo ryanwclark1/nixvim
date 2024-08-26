@@ -3,6 +3,7 @@ _: {
     enable = true;
 
     settings = {
+
       spec = [
         {
           __unkeyed = "<leader>b";
@@ -34,13 +35,19 @@ _: {
         }
       ];
 
+      disable.ft = [
+        "TelescopePrompt"
+        "neo-tree"
+        "neo-tree-popup"
+      ];
+
       replace = {
-        # key = [
-        #   [
-        #     "<Space>"
-        #     "SPC"
-        #   ]
-        # ];
+        key = [
+          [
+            "<Space>"
+            "SPC"
+          ]
+        ];
 
         desc = [
           [
@@ -65,11 +72,10 @@ _: {
           ]
         ];
       };
+
       win = {
         border = "single";
       };
-
-      # preset = "helix";
     };
   };
 }
