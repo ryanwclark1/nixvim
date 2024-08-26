@@ -120,8 +120,8 @@
           offsets = [
             {
               filetype = "neo-tree";
-              highlight = "Directory";
               text = "File Explorer";
+              highlight = "Directory";
               text_align = "center";
             }
           ];
